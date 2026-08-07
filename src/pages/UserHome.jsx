@@ -3,7 +3,7 @@ import SearchBus from "../components/UserComponents/SearchBus";
 import PopularRoutes from "../components/UserComponents/PopularRoutes";
 import UserProfile from "../components/UserComponents/UserProfile";
 import TripHistory from "../components/UserComponents/TripHistory";
-import UserNavbar from "../components/UserComponents/UserNavbar";
+import UserNavbar from "../components/UserComponents/UserNavBar";
 
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";

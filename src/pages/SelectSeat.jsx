@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import BookinDetails from "../components/UserComponents/BookingDetails";
 import SeatArrangement from "../components/UserComponents/SeatArrangement";
-import UserNavbar from "../components/UserComponents/UserNavbar";
+import UserNavbar from "../components/UserComponents/UserNavBar";
 
 export default function SelectSeat() {
   const location = useLocation();

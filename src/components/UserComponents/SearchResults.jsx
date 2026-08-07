@@ -1,7 +1,7 @@
 import { FaArrowRightLong } from "react-icons/fa6";
 import SearchResultCard from "./SearchResultCard";
 import { useLocation, useNavigate } from "react-router-dom";
-import UserNavbar from "./UserNavbar";
+import UserNavbar from "./UserNavBar";
 import { useState } from "react";
 
 export default function SearchResults() {

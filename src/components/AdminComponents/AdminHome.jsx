@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-import AdminSidebar from "./AdminSidebar";
+import AdminSidebar from "./AdminSideBar";
 
-import AdminDashboard from "./AdminDashboard";
+import AdminDashboard from "./AdminDashBoard";
 
 import AdminUserManagement from "./AdminUserManagement";
 
