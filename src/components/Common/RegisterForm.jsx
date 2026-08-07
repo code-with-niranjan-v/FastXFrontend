@@ -5,6 +5,7 @@ import { useState } from "react";
 import { FaUser } from "react-icons/fa";
 import { FaBusSimple } from "react-icons/fa6";
 import toast from "react-hot-toast";
+import { BASE_URL } from "../../config/apiConfig";
 export default function RegisterForm({ user }) {
   const [isOperator, setOperator] = useState(false);
   const handleRegister = () => {
@@ -94,7 +95,7 @@ export default function RegisterForm({ user }) {
 
     const toastId = toast.loading("Creating account...");
 
-    fetch("http://localhost:8080/api/auth/register", {
+    fetch(`${BASE_URL}/api/auth/register`, {
       method: "POST",
 
       headers: {

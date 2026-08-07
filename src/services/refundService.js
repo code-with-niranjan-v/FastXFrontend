@@ -1,10 +1,11 @@
 import axios from "axios";
+import { BASE_URL } from "../config/apiConfig";
 
 export const getRefundRequests = async () => {
   const token = localStorage.getItem("token");
 
   try {
-    const res = await axios.get("http://localhost:8080/api/operator/refund", {
+    const res = await axios.get(`${BASE_URL}/api/operator/refund`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -21,7 +22,7 @@ export const approveRefund = async (refundId) => {
 
   try {
     const res = await axios.put(
-      `http://localhost:8080/api/operator/refund/approve/${refundId}`,
+      `${BASE_URL}/api/operator/refund/approve/${refundId}`,
       {},
       {
         headers: {
@@ -41,7 +42,7 @@ export const rejectRefund = async (refundId) => {
 
   try {
     const res = await axios.put(
-      `http://localhost:8080/api/operator/refund/reject/${refundId}`,
+      `${BASE_URL}/api/operator/refund/reject/${refundId}`,
       {},
       {
         headers: {

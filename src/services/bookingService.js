@@ -1,4 +1,5 @@
 import axios from "axios";
+import { BASE_URL } from "../config/apiConfig";
 
 export async function bookTicket(
   busId,
@@ -11,7 +12,7 @@ export async function bookTicket(
 
   try {
     const response = await axios.post(
-      "http://localhost:8080/api/user/bookings",
+      `${BASE_URL}/api/user/bookings`,
 
       {
         busId,
@@ -39,7 +40,7 @@ export async function bookTicket(
 }
 
 export async function getBookings() {
-  const response = await axios.get("http://localhost:8080/api/user/bookings", {
+  const response = await axios.get(`${BASE_URL}/api/user/bookings`, {
     headers: {
       Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
@@ -53,7 +54,7 @@ export const cancelBooking = async (bookingId) => {
 
   try {
     const res = await axios.delete(
-      `http://localhost:8080/api/user/booking/${bookingId}`,
+      `${BASE_URL}/api/user/booking/${bookingId}`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -76,7 +77,7 @@ export const getBookedSeats = async (
     const token = localStorage.getItem("token");
 
     const res = await axios.get(
-      `http://localhost:8080/api/seats/booked-seats/${busId}?date=${date}`,
+      `${BASE_URL}/api/seats/booked-seats/${busId}?date=${date}`,
 
       {
         headers: {

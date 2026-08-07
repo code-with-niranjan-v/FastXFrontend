@@ -1,10 +1,11 @@
 import axios from "axios";
+import { BASE_URL } from "../config/apiConfig";
 
 export const getAllUsers = async () => {
   const token = localStorage.getItem("token");
 
   try {
-    const res = await axios.get("http://localhost:8080/api/admin/users", {
+    const res = await axios.get(`${BASE_URL}/api/admin/users`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -20,7 +21,7 @@ export const getAllBookings = async () => {
   const token = localStorage.getItem("token");
 
   try {
-    const res = await axios.get("http://localhost:8080/api/admin/bookings", {
+    const res = await axios.get(`${BASE_URL}/api/admin/bookings`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -36,7 +37,7 @@ export const getAllBusesAdmin = async () => {
   const token = localStorage.getItem("token");
 
   try {
-    const res = await axios.get("http://localhost:8080/api/admin/buses", {
+    const res = await axios.get(`${BASE_URL}/api/admin/buses`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -53,7 +54,7 @@ export const deleteUser = async (id) => {
 
   try {
     const res = await fetch(
-      `http://localhost:8080/api/admin/delete-user/${id}`,
+      `${BASE_URL}/api/admin/delete-user/${id}`,
       {
         method: "DELETE",
 

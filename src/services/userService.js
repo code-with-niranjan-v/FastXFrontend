@@ -1,11 +1,12 @@
 import axios from "axios";
+import { BASE_URL } from "../config/apiConfig";
 
 export const addMoneyToWallet = async (amount) => {
   const token = localStorage.getItem("token");
 
   try {
     const res = await axios.put(
-      "http://localhost:8080/api/user/wallet/add",
+      `${BASE_URL}/api/user/wallet/add`,
       {
         amount,
       },
@@ -26,7 +27,7 @@ export const updateProfile = async (userData) => {
   const token = localStorage.getItem("token");
 
   try {
-    const res = await fetch("http://localhost:8080/api/user/profile", {
+    const res = await fetch(`${BASE_URL}/api/user/profile`, {
       method: "PUT",
 
       headers: {
@@ -52,7 +53,7 @@ export const updatePassword = async (passwordData) => {
   const token = localStorage.getItem("token");
 
   try {
-    const res = await fetch("http://localhost:8080/api/user/change-password", {
+    const res = await fetch(`${BASE_URL}/api/user/change-password`, {
       method: "PUT",
 
       headers: {

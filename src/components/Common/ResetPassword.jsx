@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import { useState } from "react";
 
 import toast from "react-hot-toast";
+import { BASE_URL } from "../../config/apiConfig";
 
 export default function ResetPassword() {
   const [searchParams] = useSearchParams();
@@ -12,7 +13,7 @@ export default function ResetPassword() {
   const [password, setPassword] = useState("");
 
   const handleReset = async () => {
-    const res = await fetch("http://localhost:8080/api/user/reset-password", {
+    const res = await fetch(`${BASE_URL}/api/user/reset-password`, {
       method: "POST",
 
       headers: {

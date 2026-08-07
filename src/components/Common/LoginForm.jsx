@@ -7,6 +7,7 @@ import { FaBusSimple } from "react-icons/fa6";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../redux/slices/userSlice";
 import toast from "react-hot-toast";
+import { BASE_URL } from "../../config/apiConfig";
 export default function LoginForm() {
   const dispatch = useDispatch();
   const [isOperator, setOperator] = useState(false);
@@ -14,7 +15,7 @@ export default function LoginForm() {
   const navigate = useNavigate();
   const [password, setPassword] = useState("");
   const handleLogin = () => {
-    fetch("http://localhost:8080/api/auth/login", {
+    fetch(`${BASE_URL}/api/auth/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

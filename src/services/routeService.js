@@ -1,10 +1,11 @@
 import axios from "axios";
+import { BASE_URL } from "../config/apiConfig";
 
 export const addRoute = async (routeData) => {
   try {
     routeData.daily = true;
     const token = localStorage.getItem("token");
-    const res = await axios.post("http://localhost:8080/api/route", routeData, {
+    const res = await axios.post(`${BASE_URL}/api/route`, routeData, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -20,7 +21,7 @@ export const getAllRoutes = async () => {
   const token = localStorage.getItem("token");
 
   try {
-    const res = await axios.get("http://localhost:8080/api/route/all", {
+    const res = await axios.get(`${BASE_URL}/api/route/all`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -37,7 +38,7 @@ export const deleteRoute = async (id) => {
   const token = localStorage.getItem("token");
 
   try {
-    const res = await axios.delete(`http://localhost:8080/api/route/${id}`, {
+    const res = await axios.delete(`${BASE_URL}/api/route/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -54,7 +55,7 @@ export const updateRouteData = async (id, routeData) => {
 
   try {
     const res = await axios.put(
-      `http://localhost:8080/api/route/${id}`,
+      `${BASE_URL}/api/route/${id}`,
       routeData,
       {
         headers: {
